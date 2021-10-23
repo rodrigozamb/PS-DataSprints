@@ -65,10 +65,10 @@
                 },
                 "responses":{
                     "201":{
-                        "description":"Sucesso"
+                        "description":"Operação de criação obteve sucesso"
                     },
                     "400":{
-                        "description":"Falha na criação"
+                        "description":"Falha na criação, a resposta da requisição contém informações sobre o possível erro."
                     }
                 }
             }
@@ -77,7 +77,7 @@
             "post":{
                 "tags":["Usuário"],
                 "summary":"SignIn Usuário",
-                "description":"Realiza o SignIn do usuário na aplicação",
+                "description":"Realiza o login do usuário na aplicação",
                 "requestBody":{
                     "content":{
                         "application/json":{
@@ -101,7 +101,7 @@
                 },
                 "responses":{
                     "200":{
-                        "description":"Sucesso",
+                        "description":"Sucesso, o token de autenticação do usuário será retornado",
                         "content":{
                             "application/json":{
                                 "schema":{
@@ -130,7 +130,7 @@
                     }
                 ],
                 "summary":"Action Usuário",
-                "description":"Uma rota de 'ação' para usuário autenticados na aplicação, requer o token do usuário no campo de `Authorization`",
+                "description":"Uma rota de 'ação' para usuário autenticados na aplicação, simulando possíveis outras operações sensíveis, essa requisição requer o token do usuário no campo de `Authorization`, caso contrário, ela falhará.",
                 "responses":{
                     "200":{
                         "description":"Sucesso, monstará a mensagem : '`User` reached athentificated route'"
