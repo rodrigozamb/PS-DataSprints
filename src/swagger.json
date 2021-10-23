@@ -1,0 +1,145 @@
+
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Documentação API Case Técnico DataSprints",
+    "description": "Essa é a documentação referente a API criada para resolver o case técnico da DataSprints.\n",
+    "contact":{
+        "email":"rodrigozamboni2@gmail.com"
+    }
+  },
+  "components":{
+      "securitySchemes":{
+          "bearerAuth":{
+              "type":"http",
+              "scheme":"bearer",
+              "bearerFormat":"bearer"
+          }
+      }
+  },
+    "paths":{
+
+        "/users/signup":{
+            "post":{
+                "tags":["Usuário"],
+                "summary":"SignUp Usuário",
+                "description":"Cria um novo usuário na aplicação",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "username":{
+                                        "type":"string"
+                                    },
+                                    "nome_completo":{
+                                        "type":"string"
+                                    },
+                                    "email":{
+                                        "type":"string"
+                                    },
+                                    "password":{
+                                        "type":"string"
+                                    },
+                                    "endereco":{
+                                        "type":"string"
+                                    },
+                                    "idade":{
+                                        "type":"integer"
+                                    }
+                                },
+                                "example":{
+                                    "username":"UserTest",
+                                    "nome_completo":"nome completo da Silva",
+                                    "email":"teste@datasprings.com",
+                                    "password":"password123",
+                                    "endereco":"Avenida Teste 321",
+                                    "idade":22
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description":"Sucesso"
+                    },
+                    "400":{
+                        "description":"Falha na criação"
+                    }
+                }
+            }
+        },
+        "/users/signin":{
+            "post":{
+                "tags":["Usuário"],
+                "summary":"SignIn Usuário",
+                "description":"Realiza o SignIn do usuário na aplicação",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "email":{
+                                        "type":"string"
+                                    },
+                                    "senha":{
+                                        "type":"string"
+                                    }
+                                },
+                                "example":{
+                                    "email":"teste@datasprings.com",
+                                    "password":"password123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Sucesso",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "properties":{
+                                        "token":{
+                                            "type":"string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400":{
+                        "description":"Falha na operação de SignIn"
+                    }
+                }
+            }
+        },
+        "/users/action":{
+            "get":{
+                "tags":["Usuário"],
+                "security":[
+                    {
+                        "bearerAuth":[]
+                    }
+                ],
+                "summary":"Action Usuário",
+                "description":"Uma rota de 'ação' para usuário autenticados na aplicação, requer o token do usuário no campo de `Authorization`",
+                "responses":{
+                    "200":{
+                        "description":"Sucesso, monstará a mensagem : '`User` reached athentificated route'"
+                    },
+                    "401":{
+                        "description":"Invalid Token"
+                    }
+                }
+            }
+        }
+    }
+}
