@@ -45,6 +45,8 @@ $ sudo typeorm migration:run
 
 # Caso queira conferir o estado dos containers
 $ sudo docker ps
+![image](https://user-images.githubusercontent.com/35114990/138575178-de0715b5-5816-447e-882d-2f86043b78db.png)
+
 ```
 # Configuração da API
 - O servidor local da aplicação, criado pelo Docker, estará rodando na porta 3333<br/>
