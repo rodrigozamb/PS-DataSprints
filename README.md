@@ -26,18 +26,29 @@ $ git clone https://github.com/rodrigozamb/PS-DataSprints.git
 $ cd PS-DataSprints
 
 # Instale as dependências
+( se você usa yarn )
 $ yarn install
+( se você usa npm)
+$ npm install
+
+Caso esteja numa máquina com sistema operacional Linux ( como foi o meu caso ), lembre-se de usar o comando sudo.
 
 # Inicie a aplicação e o Banco de Dados
 $ sudo docker-compose up -d
 $ sudo docker-compose start
+
+# Execute a migration do TypeORM para criar a tabela no Banco de Dados
+( se você usa yarn )
+$ yarn typeorm migration:run
+( se você usa npm)
+$ sudo typeorm migration:run
 
 # Caso queira conferir o estado dos containers
 $ sudo docker ps
 ```
 # Configuração da API
 - O servidor local da aplicação, criado pelo Docker, estará rodando na porta 3333<br/>
-- O Banco de Dados Postgres, também criado pelo Docker, estará rodando na porta 5555<br/>
+- O Banco de Dados Postgres, também criado pelo Docker, estará rodando na porta 5432<br/>
 
 Dessa forma, foram criadas 3 rotas a fim de solucionar o desafio proposto.<br/>
 São elas :<br/>
