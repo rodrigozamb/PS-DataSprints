@@ -11,7 +11,7 @@ const authenticateUserController = new AuthenticateUserController()
 const actionController = new ActionController()
 
 usersRoutes.post("/signup",createUserController.handle)
-usersRoutes.post("/signin",authenticateUserController.handle)
+usersRoutes.get("/signin",authenticateUserController.handle)
 usersRoutes.get("/action",ensureAuthenticated ,actionController.handle)
 
 export {usersRoutes}
