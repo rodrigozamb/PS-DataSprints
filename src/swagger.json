@@ -5,7 +5,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Documentação API Case Técnico DataSprints",
-    "description": "Essa é a documentação referente a API criada para resolver o case técnico da DataSprints.\nÉ possível testar as rotas por meio da documentação, basta clickar em na rota desejada e depois em 'try it out'. ",
+    "description": "Essa é a documentação referente a API criada para resolver o case técnico da DataSprints.\n <br/>É possível testar as rotas por meio da documentação, basta clickar em na rota desejada e depois em 'try it out' > 'execute'. ",
     "contact":{
         "email":"rodrigozamboni2@gmail.com"
     }
