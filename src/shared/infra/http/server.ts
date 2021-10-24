@@ -15,6 +15,8 @@ app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(swaggerFile))
 
 app.use(router)
 app.use((err:Error,request:Request,response:Response,next:NextFunction)=>{
+   
+    //Lidando com possíveis erros na rota
     if(err instanceof AppError){
         return response.status(err.statusCode).json({message:err.message})
     }
@@ -23,6 +25,13 @@ app.use((err:Error,request:Request,response:Response,next:NextFunction)=>{
         status:"error",
         message:`Internal Server Error - ${err.message}`
     })
+})
+
+app.use((request:Request,response:Response,next:NextFunction)=>{
+
+    // Lidando com rotas de erro 404
+    return response.status(404).json({message:"Essa página não existe ( ainda ). Tente novamente."});
+
 })
 
 

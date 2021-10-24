@@ -19,7 +19,7 @@ class ActionUseCase{
             throw new AppError("User not exists in database")
         }
 
-        return  user.nome_completo+" reached athentificated route"
+        return  user.nome_completo+" acessou a rota para usuários autenticados."
 
     }
 }

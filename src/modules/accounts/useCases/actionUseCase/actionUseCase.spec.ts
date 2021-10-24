@@ -35,7 +35,7 @@ describe("Authenticate User",()=>{
         const instUser = await usersRepositoryInMemory.findByEmail(user.email) 
         
         const resp = await actionUseCase.execute(instUser.id)
-        expect(resp).toEqual(instUser.nome_completo+" reached athentificated route")
+        expect(resp).toEqual(instUser.nome_completo+" acessou a rota para usuários autenticados.")
 
     })
 

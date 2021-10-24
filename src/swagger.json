@@ -133,7 +133,7 @@
                 "description":"Uma rota de 'ação' para usuário autenticados na aplicação, simulando possíveis outras operações sensíveis, essa requisição requer o token do usuário no campo de `Authorization`, caso contrário, ela falhará.",
                 "responses":{
                     "200":{
-                        "description":"Sucesso, monstará a mensagem : '`User` reached athentificated route'"
+                        "description":"Sucesso, monstará a mensagem : '`User` acessou a rota para usuários autenticados.'"
                     },
                     "401":{
                         "description":"Invalid Token"
