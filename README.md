@@ -67,6 +67,16 @@ O acesso ao Banco de Dados utilizado é dado pelo endereço : 'localhost:5432/te
 A Documentação completa da API pode ser acessada em :<br/>
 http://localhost:3333/api-docs <br/>
 
+# Testes
+Foram desenvolvidos alguns testes unitários, utilizando Jest, a fim de mostrar o funcionamento correto da aplicação. Para rodar os testes, dê o seguinte comando:
+```bash
+( se você usa yarn )
+$ yarn test
+( se você usa npm)
+$ npm test
+
+```
+
 <br/>
 <br/>
 <br/>
