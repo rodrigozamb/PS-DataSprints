@@ -74,7 +74,7 @@
             }
         },
         "/users/signin":{
-            "get":{
+            "post":{
                 "tags":["Usuário"],
                 "summary":"SignIn Usuário",
                 "description":"Realiza o login do usuário na aplicação",
